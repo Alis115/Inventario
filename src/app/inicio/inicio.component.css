@@ -1,0 +1,12 @@
+.fondo{
+    background-image: url('../../app/Recursos/inventory1.jpg');
+    height: 100vh;
+    background-size: 100vw 100vh;
+}
+.mnav{
+    background-color: rgba(10, 20, 10, 1,9);
+    
+}
+.header{
+    position: fixed;
+}

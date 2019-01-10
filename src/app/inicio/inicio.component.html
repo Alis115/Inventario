@@ -1,0 +1,79 @@
+<nav class="navbar fixed-top navbar-light mnav">
+  <a class="navbar-brand text-danger"><strong>
+      <h1>Inventario</h1>
+    </strong></a>
+  <div class="form-group">
+    <button class="btn btn-outline-info mr-1" type="button" data-toggle="modal" data-target="#iniciarModal">Iniciar</button>
+    <button class="btn btn-outline-success" type="button" data-toggle="modal" data-target="#registrarModal">Registrar</button>
+  </div>
+</nav>
+<div class="fondo d-flex justify-content-center align-items-center">
+  <div class="pms">
+    <h1 class="font-weight-bold">Una herramienta que te permitira llevar control de tus finanzas</h1>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="iniciarModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Inicar Sesion</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="alert alert-danger" *ngIf="message">
+          Error
+        </div>
+        <form>
+          <div class="form-group">
+            <label for="">User</label>
+            <input type="text" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="">Password</label>
+            <input type="text" class="form-control">
+          </div>
+        </form>
+      </div>
+      <div class="form-group d-flex justify-content-center align-items-center">
+        <button type="button" class="btn btn-success mr-2" data-dismiss="modal">Iniciar</button>
+        <button type="button" class="btn btn-primary">Cancelar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal Registrar-->
+<div class="modal fade" id="registrarModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Nuevo Usuario</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="alert alert-danger" *ngIf="message">
+        Error
+      </div>
+      <form (ngSubmit)='NuevoUsuario()'>
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="">Correo</label>
+            <input type="text" class="form-control" name="correo" [(ngModel)]="r.correo">
+          </div>
+          <div class="form-group">
+            <label for="">Password</label>
+            <input type="text" class="form-control" name="password" [(ngModel)]="r.password">
+          </div>
+        </div>
+        <div class="form-group d-flex justify-content-center align-items-center">
+          <button type="submit" class="btn btn-success mr-2">Iniciar</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
